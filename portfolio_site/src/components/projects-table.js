@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from "react"
+import db from "../services/firebase";
 
-import getAllProjects from "../services/getprojects";
-
-function ProjectTable() {
+function useProjects(){
     const [projects, setProjects] = useState([]);
-    const [loading, setLoading] = useState(true);
 
-    async function fetchProjects() {
-        const response = await getAllProjects();
-        setProjects(projects => ({projects: response}));
-        setLoading(false)
-    }
-      
-    useEffect(() => {
-        fetchProjects();
+    useEffect(()=> {
+        db.collection('projects')
+        .onSnapshot((snapshot) => {
+        const newProjects = snapshot.docs.map((doc) =>({
+            id:doc.id,
+            ...doc.data()
+        }))
+          setProjects(newProjects)      
+    })
     }, []);
 
+    return projects
+}
+
+function ProjectTable() {
+    const projects = useProjects();
+
     const tableBody = () => {
-        return !loading ? (
+        return projects !== undefined ? (
         <tbody>
-        {projects.projects.map((project, i) => (
+        {projects.map((project, i) => (
             <tr key={i}>
                 <td>{project.title}</td>
-                <td>github link</td>
+                <td>{project.id}</td>
                 <td>view button</td>
             </tr>
         ))}
@@ -31,8 +36,6 @@ function ProjectTable() {
         null ;
     }
 
-console.log(loading)
-console.log(projects)
     return (
         <div>
             ProjectTable
@@ -45,7 +48,7 @@ console.log(projects)
                 </tr>
                 </thead>
 
-                {tableBody}
+                {tableBody()}
                
             </table>
         </div>
