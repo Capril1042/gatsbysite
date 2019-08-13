@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react"
+
+import AdminLinkButton from "./project-admin-button";
 import db from "../services/firebase";
 
 function useProjects(){
@@ -27,8 +29,8 @@ function ProjectTable() {
         {projects.map((project, i) => (
             <tr key={i}>
                 <td>{project.title}</td>
-                <td>{project.id}</td>
-                <td>view button</td>
+                <td>{project.gitHubLink}</td>
+                <td><AdminLinkButton pageLink="/admin/edit-project" projectId={project.id} buttonName="view"/></td>
             </tr>
         ))}
         </tbody> 
