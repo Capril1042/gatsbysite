@@ -11,7 +11,7 @@ function CreateProjectForm(props) {
     const [description, setDescription] = useState("");
     const [gitHubLink, setGitHubLink] = useState("");
     const [link, setLink] = useState("");
-    const [message, setMessage]= useState("Add a New Project");
+    const [message, setMessage]= useState();
 
     
   const resetForm = () => {
@@ -52,9 +52,9 @@ function CreateProjectForm(props) {
     }
 
     return (
-        <div>
-        <span>{message} </span>
-        <form onSubmit={handleSubmit}>
+        <div className="create-project-container">
+        <span className="create-project-message">{message} </span>
+        <form className="create-update-form" onSubmit={handleSubmit}>
             <label>
                 Title:
                 <input

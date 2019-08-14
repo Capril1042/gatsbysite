@@ -29,9 +29,10 @@ function useProject(id){
 function Project(props) {
     const project = useProject(props.projectId);
     return (
-  <div>
-    <h3>{project.title}</h3>
+  <div className="admin-project-view-container">
+    <h3 className="admin-project-header">{project.title}</h3>
     <p>{project.description}</p>
+    <p>{project.gitHubLink}</p>
 </div>
 )
     }

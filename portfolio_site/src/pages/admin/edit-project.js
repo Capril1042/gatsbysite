@@ -24,7 +24,7 @@ const EditProjectAdmin = ({location}) => {
     return (
     <Layout>
         <SEO title="AdminProjects" />
-        <h1>Projects Page Edit- Admin</h1>
+        <h2 className="admin-header">Admin Project View Page</h2>
         <EditAlertContainer action={action} handleCancel={handleCancel} projectId={location.state.projectId}/>
         <Project projectId={location.state.projectId}/>
         <button onClick={() => handleActionChange('edit')}>edit</button>

@@ -29,7 +29,6 @@ function ProjectTable() {
         {projects.map((project, i) => (
             <tr key={i}>
                 <td>{project.title}</td>
-                <td>{project.gitHubLink}</td>
                 <td><AdminLinkButton pageLink="/admin/edit-project" projectId={project.id} buttonName="view"/></td>
             </tr>
         ))}
@@ -40,12 +39,10 @@ function ProjectTable() {
 
     return (
         <div>
-            ProjectTable
             <table>
                 <thead>
                 <tr>
                     <th> Title </th>
-                    <th> GitHub Link </th>
                     <th> View </th>
                 </tr>
                 </thead>
