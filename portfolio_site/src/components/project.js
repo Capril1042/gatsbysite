@@ -26,9 +26,8 @@ function useProject(id){
     return project
 }
 
-function  Project(props) {
+function Project(props) {
     const project = useProject(props.projectId);
-    console.log(project)
     return (
   <div>
     <h3>{project.title}</h3>
