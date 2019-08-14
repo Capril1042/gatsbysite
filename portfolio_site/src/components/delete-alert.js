@@ -5,7 +5,6 @@ import deleteProject from "../services/deleteproject"
 function DeleteAlert(props) {
 
     const handleDelete = (id) => {
-        console.log(`delete project ${id}`);
         deleteProject(id);
         navigate('/admin/projects');
     }
