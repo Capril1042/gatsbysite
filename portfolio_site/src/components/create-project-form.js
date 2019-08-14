@@ -1,8 +1,11 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import { navigate } from "gatsby";
 
 import validateProject from "../utils/validateProject";
 import addProject from "../services/createproject";
-function CreateProjectForm() {
+import updateProject from "../services/updateproject";
+
+function CreateProjectForm(props) {
     const [title, setTitle] = useState("");
     const [imageURL, setImageUrl] = useState("");
     const [description, setDescription] = useState("");
@@ -32,9 +35,14 @@ function CreateProjectForm() {
         const isVaild = validateProject(project);
         if (isVaild) {
             // add project to database
+            if ( props.type === 'create') {
             addProject(project);
             setMessage("A new project was Added")
             resetForm();
+            } else {
+                updateProject(props.projectId, project);
+                navigate('/admin/projects');
+            }
             console.log(`add project and reset form`)
         } else {
             // show messge ( project wasnt added )
