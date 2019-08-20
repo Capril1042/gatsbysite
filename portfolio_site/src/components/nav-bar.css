@@ -1,0 +1,28 @@
+.nav-bar {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    border-bottom: 1px solid #00b300;
+}
+
+.header-description {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding-top: 1%;
+}
+
+.nav-links {
+    margin-bottom: 0;
+    padding-top: 1.5%;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0;
+    padding-top: 1%;
+    padding-right:5px;
+}

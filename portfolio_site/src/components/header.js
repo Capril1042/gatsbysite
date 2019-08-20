@@ -6,7 +6,7 @@ import NavBar from "./nav-bar"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#006600`,
       marginBottom: `1.45rem`,
     }}
   >
