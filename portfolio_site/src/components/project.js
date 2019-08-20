@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from "react"
+import useProject from "../services/readproject"
 
-import db from "../services/firebase"
+// import db from "../services/firebase"
 
-function useProject(id){
-    const [project, setProject] = useState([]);
+// function useProject(id){
+//     const [project, setProject] = useState([]);
 
 
-    useEffect(()=> {
-        db.collection('projects').doc(id)
-        .get()
-        .then(doc => {
-            if (!doc.exists) {
-              console.log('No such document!');
-            } else {
-              console.log('Document data:', doc.data());
-              const newProject = doc.data();
-              setProject(newProject);
-            }
-          })
-          .catch(err => {
-            console.log('Error getting document', err);
-          });
-    }, []);
+//     useEffect(()=> {
+//         db.collection('projects').doc(id)
+//         .get()
+//         .then(doc => {
+//             if (!doc.exists) {
+//               console.log('No such document!');
+//             } else {
+//               console.log('Document data:', doc.data());
+//               const newProject = doc.data();
+//               setProject(newProject);
+//             }
+//           })
+//           .catch(err => {
+//             console.log('Error getting document', err);
+//           });
+//     }, []);
     
-    return project
-}
+//     return project
+// }
 
 function Project(props) {
     const project = useProject(props.projectId);

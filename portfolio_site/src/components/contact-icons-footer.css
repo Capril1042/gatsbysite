@@ -1,0 +1,12 @@
+.contact-icons-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.contact-icon {
+    color: #006600;
+    font-size: 30px;
+    padding: 1%;
+}
