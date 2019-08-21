@@ -7,26 +7,15 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import FooterContactIcons from "./contact-icons-footer"
+
 
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const AdminLayout = ({ children }) => {
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle="Admin View" />
       <div
         style={{
           margin: `0 auto`,
@@ -37,18 +26,15 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          <FooterContactIcons />
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <p>Admin login status</p>
         </footer>
       </div>
     </>
   )
 }
 
-Layout.propTypes = {
+AdminLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default AdminLayout
