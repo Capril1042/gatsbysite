@@ -1,9 +1,10 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 import NavBar from "./nav-bar"
+import AdminNavBar from "./admin-nav-bar"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, adminStatus }) => (
   <header
     style={{
       background: `#006600`,
@@ -28,7 +29,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <NavBar/>
+      {adminStatus === true ? <AdminNavBar/> : <NavBar/> }
     </div>
   </header>
 )
