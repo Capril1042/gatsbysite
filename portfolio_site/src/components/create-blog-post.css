@@ -1,0 +1,28 @@
+.create-blog-container {
+    border: 1px solid black;
+    height:70vh;
+    padding:1%;
+}
+
+.create-blog-form {
+    height:99%
+}
+
+.create-blog-label {
+    width:99%;
+}
+
+.create-blog-title-input{
+    width:85%
+}
+
+.create-blog-input-post {
+    height: 80%;
+    width:99%;
+}
+
+@media screen and (max-width: 450px){
+    .create-blog-container {
+        width:95%;
+    }
+}

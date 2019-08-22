@@ -1,0 +1,11 @@
+.blog-previewer-container {
+    border: 1px solid black;
+    height:70vh;
+    padding:1%;
+}
+
+@media screen and (max-width: 450px){
+    .blog-previewer-container {
+        width:95%;
+    }
+}
