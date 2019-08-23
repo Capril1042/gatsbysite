@@ -9,7 +9,7 @@ import SEO from "../../components/seo"
 
 function CreateBlogAdmin() {
   const [title, setTitle] = useState("");
-  const [blogPost, setBlogPost] = useState("");
+  const [blogPost, setBlogPost] = useState('');
 
   const handleTitleChange = e => {
     setTitle(e.target.value);
